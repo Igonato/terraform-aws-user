@@ -11,5 +11,8 @@ module "user" {
 }
 
 output "user_credentials" {
-  value = module.user.user_credentials
+  value = <<EOF
+aws_access_key_id = ${module.user.access_key_id}
+aws_secret_access_key = ${module.user.access_key_secret}
+EOF
 }
